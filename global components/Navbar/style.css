@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Baloo+Thambi+2&family=Open+Sans:ital@1&family=Poppins:ital,wght@1,300;1,400&display=swap");
+
+:root {
+  --white-shade: #fff;
+  --sp-txt: #ffad06;
+  --blackshade: rgba(0, 0, 0.2, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+header {
+  width: 100%;
+  overflow: hidden;
+  padding: 3rem 5rem;
+  font-family: "Baloo Bhaina 2", cursive;
+}
+.navigation {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  transition: height 0.5s, width 0.5s;
+  transition-delay: 0s, 0.75s;
+  overflow: hidden;
+  padding: 0px 10vw;
+  background-color: #9b0aa8;
+  box-shadow: 0 25px 10px var(--blackshade);
+}
+
+.navigation.active {
+  width: 100%;
+  height: 250px;
+}
+.phoneVisible {
+  width: 40%;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation .appnameBx .appname {
+  white-space: nowrap;
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: right;
+  position: sticky;
+}
+
+.nav-links {
+  width: 70%;
+}
+
+.menu {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.menu li {
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 1em;
+  padding: 5px;
+  color: white;
+}
+.menu li a:hover {
+  color: var(--sp-txt);
+  border-bottom: 2px solid var(--sp-txt);
+}
+
+.navigation .menuToggle {
+  width: 50px;
+  height: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: var(--white-shade);
+  transform: translateY(-10px);
+  box-shadow: 0 10px var(--white-shade);
+  transition: 0.5s;
+}
+
+.navigation.active .menuToggle::before {
+  content: "";
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: 0 0 var(--sp-txt);
+  background: var(--sp-txt);
+}
+
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: var(--white-shade);
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+
+.navigation.active .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+  box-shadow: 0 0 var(--sp-txt);
+  background: var(--sp-txt);
+}
+.SearchBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.SearchInput {
+  padding: 8px;
+  border: 1px solid var(--white-shade);
+  border-radius: 2px;
+  background: transparent;
+  border-radius: 7px;
+  color: white;
+}
+.SearchInput::placeholder{
+  color: white;
+}
+.SearchBtn {
+  padding: 2px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.SearchBtn svg{
+  width: 25px;
+  fill: white;
+}
+@media (max-width: 900px) {
+  .navigation {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .phoneVisible {
+    width: 100%;
+  }
+  .nav-links {
+    width: 80%;
+    margin-left: 20px;
+  }
+  .menu {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .menu li {
+    margin: 8px;
+  }
+  .menu li a {
+    padding: 0px;
+  }
+  .navigation .menuToggle {
+    display: block;
+    margin: 40px 0 0 0;
+  }
+}

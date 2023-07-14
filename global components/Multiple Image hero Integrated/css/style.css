@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Fuzzy Bubbles;
+}
+:root {
+  --primary-color: 170, 179, 42;
+}
+body {
+  min-height: 150vh;
+}
+/* Utility Classes */
+
+.sideLine {
+  height: 3px;
+  width: 70px;
+  background-color: white;
+  border-radius: 20px;
+}
+.subHeading {
+  font-size: 1.8rem;
+}
+.heading {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+}
+.btn {
+  padding: 8px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+}
+.PrimaryBtn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 2px solid white;
+}
+.PrimaryBtn:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+.SecondaryBtn {
+  border: 2px solid black;
+}
+.SecondaryBtn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 2px solid white;
+}
+/* Header */
+.Header {
+  position: sticky;
+  top: 0px;
+}
+.Navbar {
+  padding: 10px 7vw;
+  height: 60px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  gap: 5vw;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+}
+/* Sticky Navbar  */
+.stickyNavbar {
+  background-color: rgb(var(--primary-color));
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.Navbar .navFirsthalf {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.Navbar .navFirsthalf .logoBx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.Navbar .navFirsthalf .logoBx .logo {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+.Navbar .menuToggle {
+  width: 50px;
+  height: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.Navbar .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: white;
+  transform: translateY(-10px);
+  box-shadow: 0 10px white;
+  transition: 0.5s;
+}
+.Navbar.active .menuToggle::before {
+  content: "";
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: 0 0 white;
+  background: white;
+}
+.Navbar .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: white;
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+.Navbar.active .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+  box-shadow: 0 0 white;
+  background: white;
+}
+.Navbar .menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  gap: 7px;
+}
+.Navbar .menu li {
+  list-style: none;
+}
+.Navbar .menu li a {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+.Navbar .menu li a:hover {
+  border-bottom: 2px solid white;
+}
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 12vh 10vw;
+  gap: 3vh;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  border-end-start-radius: 100px;
+  border-end-end-radius: 100px;
+  opacity: 0.92;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.6);
+  transition: background 0.5s ease;
+}
+.hero.banner1::after {
+  background: url(/images/banner.jpg) no-repeat center center/ cover;
+}
+.hero.banner2::after {
+  background: url(/images/banner2.jpg) no-repeat center center/ cover;
+}
+.hero.banner3::after {
+  background: url(/images/banner3.jpg) no-repeat center center/ cover;
+}
+.hero .imageChangeBtnContainer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  top: 40vh;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.hero .imageChangeBtnContainer .btn {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.hero .imageChangeBtnContainer .btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.heroSubHeadingBx {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.hero .heroDescription {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  text-align: justify;
+}
+.hero .imagelabelBx {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 0;
+  gap: 5px;
+}
+.hero .imgLabelFlowBar {
+  height: 7px;
+  width: 70px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero .imgLabelFlowBar .labelFlow{
+  background-color: aliceblue;
+  height: 100%;
+  width: 0%;
+}
+.hero .imagelabelBx .imglabels{
+  display: flex;
+  gap: 7px;
+  width: 100%;
+  justify-content: center;
+  height: 40px;
+} 
+.hero .imagelabelBx .imagelabel {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: block;
+}
+.hero.banner1 .imglabel1 {
+  background-color: white;
+}
+.hero.banner2 .imglabel2 {
+  background-color: white;
+}
+.hero.banner3 .imglabel3 {
+  background-color: white;
+}
+@media (max-width: 790px) {
+  .Navbar {
+    justify-content: start;
+    flex-direction: column;
+    padding: 0px;
+    gap: 0px;
+    overflow: hidden;
+  }
+  .Navbar.active {
+    overflow: visible;
+  }
+  .Navbar .navFirsthalf {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 60px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  .Navbar .menuToggle {
+    display: flex;
+  }
+  .Navbar .menu {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    height: 0px;
+    display: none;
+    align-items: flex-start;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 5s, 0.75s;
+    overflow: hidden;
+    top: 60px;
+  }
+  .Navbar.active .menu {
+    height: 180px;
+    display: flex;
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.75s;
+  }
+  .stickyNavbar .menu {
+    border-top: 2px solid white;
+    background-color: rgb(var(--primary-color));
+  }
+  .hero {
+    gap: 10px;
+    padding: 20px;
+  }
+  .heroSubHeadingBx {
+    justify-content: space-around;
+  }
+  .subHeading {
+    font-size: 1.3rem;
+  }
+  .heading {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  .heroDescription {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  .sideLine {
+    width: 40px;
+  }
+}
